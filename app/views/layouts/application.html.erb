@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Yaytask</title>
+    <title>nTasks</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- <link rel="stylesheet" href="/app/assets/stylesheets/custom.css"> -->
   </head>
 
   <body>
@@ -14,7 +15,7 @@
     <%= render 'layouts/navbar' %>
 
     
-    <div class="container">
+    <div class="container" style="border-radius:25px";>
       
     <%= yield %>
   </body>

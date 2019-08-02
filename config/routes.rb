@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # created when installed devise and the views for the users
   devise_for :users
   # get 'pages/home'
 

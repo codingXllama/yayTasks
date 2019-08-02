@@ -9,7 +9,10 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                    <i class="fa fa-check-square fa-1x"></i> yayTask</a>
+                    </a>
+                    <%=link_to root_path, class: 'navbar-brand' do %>
+                    <i class="fa fa-check-square fa-1x" style="color:rgb(6,170,6)"></i> <span style="color:red;"> n</span>Tasks
+                  <%end%>
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,7 +20,23 @@
             
             
             <ul class="nav navbar-nav navbar-right">
-              
+              <!-- checking if a user has signed up successfully -->
+            <%if current_user %>
+            
+              <!-- if yes then we will show them their account settings page -->
+              <%=link_to "Account Settings",edit_user_registration_path%>
+            <!-- Displaying the logout nav bar -->
+              <%=link_to 'Log Out',destroy_user_session_path, method: :delete%>
+
+
+              <!-- Else we show the user the login and signup link -->
+            <% else %>
+                <!-- <li><a href="">Link</a></li> -->
+                <li><%=link_to 'About',about_path %></li>
+                <!-- Creating the login path -->
+                <li><%=link_to 'Log In',new_user_session_path%></li>
+                <li><%=link_to 'Contact',contactus_path %></li>
+            <%end %> 
               <li class="dropdown">
                 
                 <ul class="dropdown-menu">
